@@ -1,6 +1,6 @@
-# Certifications — CompTIA Network+ and Security+ Study Notes
+# Certifications — Study Notes for Network+, Security+, and Beyond
 
-This repository is dedicated to documenting my journey through the CompTIA Network+ and Security+ certifications.  
+This repository is dedicated to documenting my journey through various certifications.  
 All notes are structured for clarity, retention, and quick revision, following the same modular style used across my cybersecurity learning roadmap.
 
 ---
@@ -17,13 +17,6 @@ Each certification has its own folder and `notes.md` file:
 
 ---
 
-## 🧠 Study Method
-
-I'm combining resources like Professor Messer, practice exams, and hands-on labs to prepare for these certifications.  
-Each note is structured to be minimal, effective, and practical — not just passive studying.
-
----
-
 ## ✅ Purpose
 
 While these certifications are just a stepping stone, this repo helps:
@@ -34,4 +27,4 @@ While these certifications are just a stepping stone, this repo helps:
 
 ---
 
-> 🚨 All notes are for **personal study and certification prep only** and do not represent official CompTIA content.
+> 🚨 This material is independently created and **not affiliated with or endorsed by CompTIA**. All notes are for **personal study and certification prep only** and do not represent official CompTIA content.
