@@ -1,4 +1,4 @@
-2.1 — Zero Trust Model & Core Components  
+Objective 2.1 — Zero Trust Model & Core Components  
 🧩 Scenario
 
 During another passive study session at work, I listened to a Messer Security+ video on Zero Trust architecture. I wanted to absorb the mental model of “never trust, always verify” and learn how Zero Trust networks evaluate and enforce access requests using a flow of policy components.
