@@ -5,10 +5,9 @@ While listening to Professor Messer’s video on gap analysis and baselines (dur
 
 🔧 What I Did
 
-Passively listened to the full video on the sales floor.
-Logged mental checkpoints without breaking work flow.
-Captured key takeaways about gap analysis methodology and baseline structure.
-Reflected afterward using an AI-assisted quiz (6/6 score).
+🎥 Watched: “Risk Management Concepts” by Professor Messer (Security+ SY0-601)
+🎯 Maps to: CompTIA Objective 5.1 – “Compare various types of controls.”
+
 🧠 What I Learned
 
 Gap analysis helps identify security weaknesses by comparing current state vs. ideal standards.
