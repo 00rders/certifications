@@ -53,4 +53,6 @@ An employee gains unauthorized access to a server closet using a cloned badge. T
 🤖 What Could IRIS Do?
 
 Cross-reference badge scans and system logins to identify mismatched access.
-Alert when physica
+Alert when physical access occurs outside business hours.
+Maintain physical access maps per asset or user group for audits and investigations.
+Logged by Operator 00rders, supported by IRIS — your SOC copilot.
