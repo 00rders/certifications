@@ -5,32 +5,68 @@
 
 ### 🧠 Core Concepts
 
-- **Authentication**: Proves identity  
-  - Example: Password, fingerprint, smart card
-  - May use **factors** (something you know, have, are)
+The **AAA model** is the foundation of secure access control systems.  
+It defines the lifecycle of user interaction with resources:
 
-- **Authorization**: Grants access to resources  
-  - Example: File permissions, role-based access
-  - Often based on policies, roles, or attributes
+---
 
-- **Accounting**: Tracks and logs activity  
-  - Example: Access logs, session records, audit trails
-  - Supports auditing and forensic investigations
+#### 🔐 1. Authentication — *Who are you?*
+- Verifies the identity of a user or device
+- Methods include:
+  - **Username + password**
+  - **Biometrics** (fingerprint, retina)
+  - **Tokens** (hardware or software)
+  - **Smart cards**
+  - **Multi-factor authentication (MFA)**
+
+##### 📚 MFA Factor Types:
+- **Something you know** — password, PIN
+- **Something you have** — smart card, phone, hardware token
+- **Something you are** — fingerprint, facial recognition
+- **Somewhere you are** — geolocation, IP range
+- **Something you do** — typing patterns, behavior biometrics
+
+---
+
+#### 🔑 2. Authorization — *What are you allowed to do?*
+- Occurs after successful authentication
+- Determines access rights based on:
+  - **Roles** (RBAC — Role-Based Access Control)
+  - **Attributes** (ABAC — Attribute-Based Access Control)
+  - **Discretionary or mandatory access models**
+- Examples:
+  - Accessing shared drives, cloud apps, or admin panels
+
+---
+
+#### 📈 3. Accounting (Auditing) — *What did you do?*
+- Tracks and records user activity for:
+  - **Auditing**
+  - **Compliance**
+  - **Threat detection**
+- Examples:
+  - Session logs, login/logout timestamps, command histories
+- Tools: Syslog, SIEMs (Security Information and Event Management)
 
 ---
 
 ### 🔐 Why It Matters in Security
 
-- AAA is foundational to **access control models**.
-- Every secure system must:
-  - Prove identity
-  - Limit access appropriately
-  - Log what happened
-- Helps with compliance, incident response, and insider threat detection
+- AAA provides **full visibility and control** over who is in your environment, what they can do, and what they’ve done
+- Critical for:
+  - **Forensic investigations**
+  - **Insider threat detection**
+  - **Regulatory compliance**
+  - **Least privilege enforcement**
 
 ---
 
 ### 💼 Real-World SOC Example
 
-> A user logs into a VPN (Authentication), accesses a secure financial report (Authorization), and the access is recorded in the SIEM (Accounting).  
-> If a breach occurs, logs from Accounting help trace the source and confirm if permissions were excessive.
+> A contractor logs into the VPN (Authentication), accesses HR records (Authorization), and the session is fully recorded in the SIEM (Accounting).  
+> A data exfiltration alert is triggered.  
+> The SOC team uses audit logs to trace the access path, confirm file movement, and determine whether proper authorization controls were bypassed.
+
+---
+
+*Logged by 00rders*
