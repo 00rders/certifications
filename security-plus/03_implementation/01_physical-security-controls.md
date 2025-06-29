@@ -1,58 +1,50 @@
-Objective 3.5 — Physical Security Controls  
-🧩 Scenario
+### 📘 Notes — Physical Security Controls  
+**CompTIA Security+ Objective: 3.4 — Given a scenario, implement physical security controls**
 
-While studying Security+ implementation topics, I focused on the physical security devices most likely to appear on the exam. My goal was to understand which controls are high-priority for test preparation and to memorize their core function without over-focusing on overly obvious examples (e.g., lighting deters attackers).
+---
 
-🔧 What I Did
+### 🧠 Core Concepts
 
-🎥 Watched: “Physical Security Controls” by Professor Messer (Security+ SY0-601)  
-🎯 Maps to: CompTIA Objective 3.5 – “Implement physical controls to secure assets.”
+Physical security protects systems, personnel, and data from **physical threats** such as theft, vandalism, unauthorized access, or environmental hazards.
 
-🧠 What I Learned
+---
 
-These are the physical security controls I prioritized based on exam relevance:
+#### 🧱 Common Physical Security Controls
 
-- **Barricades & Bollards**  
-  Prevent vehicles from breaching restricted zones.
+- **Perimeter Security**
+  - Fencing, gates, signage
+  - Designed to deter unauthorized entry
 
-- **Access Control Vestibules (Mantraps)**  
-  One door closes before the next opens — prevents tailgating and unauthorized entry.
+- **Access Control Mechanisms**
+  - Security guards, ID badges, key cards, biometrics
+  - Controls who can enter specific areas
 
-- **Alarms & Sensors**  
-  Detect motion, door opening, or glass breaking — trigger alerts or lockdowns.
+- **Surveillance**
+  - CCTV, motion sensors, security alarms
+  - Used for both deterrence and incident investigation
 
-- **Badges, Smart Cards, Biometrics**  
-  Used to verify identity and grant access to secure areas.
+- **Environmental Controls**
+  - Fire suppression systems (e.g., sprinklers, halon)
+  - HVAC, humidity control, water leak detection
+  - Protects equipment from environmental damage
 
-- **Video Surveillance (CCTV)**  
-  Provides visual record of activity — used for real-time monitoring and post-incident review.
+- **Barriers and Locking Systems**
+  - Mantraps, turnstiles, safes, locked server racks
+  - Enforces one-person-at-a-time entry or secured containment
 
-- **Key Management**  
-  Tracks physical key issuance and limits duplication.
+---
 
-- **Security Guards**  
-  Act as active deterrents, monitors, and first responders.
+### 🔐 Why It Matters in Security
 
-- **Cable Locks & Locking Cabinets**  
-  Protect mobile devices, servers, or drives from physical theft.
+- No amount of digital security compensates for weak **physical security**
+- Many high-profile breaches began with **physical intrusion** (e.g., tailgating, USB drops)
+- Physical controls are often the first and last line of defense in defense-in-depth strategies
 
-- **Electronic Door Access Controls**  
-  Include keypads, card readers, or biometric scanners — often tied to access logs.
+---
 
-- **Faraday Cages / Shielding**  
-  Block electromagnetic signals to protect against wireless eavesdropping or data leakage.
+### 💼 Real-World SOC Example
 
-🔒 Why It Matters
-
-Digital security is meaningless if physical assets can be stolen or tampered with. Understanding these controls is critical in roles where incident response or compliance require layered protection — both logical and physical.
-
-💼 Real-World Scenario
-
-An employee gains unauthorized access to a server closet using a cloned badge. The breach was made possible by weak key management and no real-time surveillance. Incident response required reviewing physical logs alongside SIEM alerts — tying physical and digital together.
-
-🤖 What Could IRIS Do?
-
-Cross-reference badge scans and system logins to identify mismatched access.
-Alert when physical access occurs outside business hours.
-Maintain physical access maps per asset or user group for audits and investigations.
-Logged by Operator 00rders, supported by IRIS — your SOC copilot.
+> A data center uses key card access and mantraps to restrict entry to authorized personnel.  
+> A technician attempts to piggyback into the server room.  
+> Motion sensors and CCTV record the attempt, triggering a security alert.  
+> The SOC analyst correlates this with a suspicious USB device found on the floor the next day.
