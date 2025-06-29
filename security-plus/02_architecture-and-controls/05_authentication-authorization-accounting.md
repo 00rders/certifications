@@ -1,40 +1,36 @@
-# 05 — Authentication, Authorization & Accounting (AAA)
-
-## 🧩 Context  
-The AAA framework is a security cornerstone that defines how users are verified, what they’re allowed to do, and how their actions are tracked. Every secure environment — from VPNs to internal corporate systems — relies on these principles.
-
-## 🔧 What I Learned
-
-- **Identification**: Claiming an identity (e.g., entering a username).
-- **Authentication**: Proving that identity (e.g., entering a password, using MFA).
-- **Authorization**: Determining what resources a verified user can access (based on roles, attributes, or groups).
-- **Accounting**: Logging user activity — who accessed what, when, and how long.
-
-### Supporting Concepts:
-
-- **AAA Servers**: Handle centralized authentication (e.g., RADIUS or TACACS+ used in VPN concentrators).
-- **Digital Certificates**: Used in internal networks to verify device identities (especially in enterprise environments).
-- **Certificate Authority (CA)**: Central authority responsible for issuing and validating digital certificates.
-- **Attribute-Based Access Control (ABAC)**: A scalable way to group users and assign permissions based on shared characteristics (e.g., job role or department).
-
-## 🔒 Why It Matters
-
-- Prevents unauthorized access by enforcing strict identity verification.
-- Allows fine-tuned control over what users or systems can do.
-- Logs everything for auditing, compliance, and post-incident investigations.
-
-## 🛠 Real-World Application Scenario  
-Your VPN login at work fails on your personal phone but works on your work-issued laptop. The VPN concentrator uses an AAA server that cross-checks your login credentials and device certificate — and your phone doesn’t have a valid certificate issued by the internal Certificate Authority. This is by design to prevent unauthorized endpoints from accessing sensitive systems.
+### 📘 Notes — Authentication, Authorization, and Accounting (AAA)  
+**CompTIA Security+ Objective: 4.1 — Compare authentication, authorization, and accounting concepts**
 
 ---
 
-## 🤖 What Could IRIS Do?
+### 🧠 Core Concepts
 
-- **Parse AAA logs** to detect failed login attempts or suspicious behavior across users and devices.
-- **Verify certificate status** and expiration for endpoints tied to the internal network.
-- **Auto-suggest authorization model optimizations** (e.g., flag overly permissive group access).
-- **Alert SOC operators** to failed authentication spikes or unauthorized resource access.
+- **Authentication**: Proves identity  
+  - Example: Password, fingerprint, smart card
+  - May use **factors** (something you know, have, are)
+
+- **Authorization**: Grants access to resources  
+  - Example: File permissions, role-based access
+  - Often based on policies, roles, or attributes
+
+- **Accounting**: Tracks and logs activity  
+  - Example: Access logs, session records, audit trails
+  - Supports auditing and forensic investigations
 
 ---
 
-*Logged by Operator 00rders – with IRIS monitoring access control hygiene and identity-based behaviors.*
+### 🔐 Why It Matters in Security
+
+- AAA is foundational to **access control models**.
+- Every secure system must:
+  - Prove identity
+  - Limit access appropriately
+  - Log what happened
+- Helps with compliance, incident response, and insider threat detection
+
+---
+
+### 💼 Real-World SOC Example
+
+> A user logs into a VPN (Authentication), accesses a secure financial report (Authorization), and the access is recorded in the SIEM (Accounting).  
+> If a breach occurs, logs from Accounting help trace the source and confirm if permissions were excessive.
