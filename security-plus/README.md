@@ -1,30 +1,45 @@
-# Security+ (SY0-601) Certification Notes
+# 🛡️ Security+ (SY0-601) Certification Notes
 
-This folder contains my modular study system for the CompTIA Security+ exam. Each subfolder aligns with one of the five official domains from the SY0-601 objectives.
+This repository contains my modular, domain-aligned study system for the **CompTIA Security+** (SY0-601) exam.  
+Each folder maps directly to the five official Security+ domains, with structured notes for every major concept.
+
+---
 
 ## 📁 Folder Structure
 
 | Folder | Domain |
 |--------|--------|
-| `01_attacks-threats-vulnerabilities/` | Attacks, Threats, and Vulnerabilities |
-| `02_architecture-design/` | Architecture and Design |
-| `03_implementation/` | Implementation |
-| `04_operations-incidents/` | Operations and Incident Response |
-| `05_governance-risk-compliance/` | Governance, Risk, and Compliance |
-
-## 🧠 Study Method
-
-- **Watch**: Professor Messer video playlists.
-- **Trigger**: IRIS-assisted post-video reflections to extract:
-  - Mapped objectives
-  - Weak spots
-  - Key concepts
-  - Automation insights
-- **Document**: Structured `.md` notes per domain.
-- **Translate**: Real knowledge → tooling and workflow logic.
-
-> This is more than certification prep — it's training data for a future SOC copilot.
+| `01_threats-attacks-vulnerabilities/` | 1.0 — Attacks, Threats, and Vulnerabilities |
+| `02_architecture-and-controls/`       | 2.0 — Architecture and Design |
+| `03_implementation/`                  | 3.0 — Implementation |
+| `04_operations-incidents/`            | 4.0 — Operations and Incident Response |
+| `05_governance-risk-compliance/`      | 5.0 — Governance, Risk, and Compliance |
 
 ---
 
-*Maintained by Operator 00rders*
+## 🧠 Study Method
+
+- **Watch** — Professor Messer's SY0-601 video playlist
+- **Reflect** — Short post-video takeaways identifying:
+  - What clicked
+  - What felt forgettable
+  - What needs reinforcement
+- **Note** — Clean, per-topic `.md` entries with:
+  - 🔹 Objective mapping
+  - 🔹 Core concepts
+  - 🔹 Real-world SOC examples
+  - 🔹 No fluff, no filler
+- **Repeat** — Continuous mini-reviews and quizzes for retention
+
+---
+
+## 💡 Why This Exists
+
+> This isn’t just certification prep.  
+> It’s structured onboarding for a future **SOC analyst** — and training data for the IRIS copilot project.
+
+All notes are written for real-world application, not rote memorization.
+
+---
+
+*Maintained by Operator 00rders · Security+ in progress*
