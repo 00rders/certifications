@@ -1,38 +1,41 @@
-# 04 — Digital Signatures & Hashing
-
-## 🧩 Context  
-Hashing and digital signatures are foundational to validating data integrity and proving authenticity in secure systems. They are used everywhere from file verification to encrypted communications.
-
-## 🔧 What I Learned
-
-- A **hash** is a one-way mathematical function that turns any input (like a file) into a fixed-length string of characters.
-- If even one byte of the input changes, the resulting hash changes completely — this makes it ideal for **detecting tampering**.
-- A **digital signature** has two parts:
-  1. The original data is hashed.
-  2. The hash is encrypted using the sender’s **private key** (asymmetric encryption).
-- To verify the signature:
-  - The receiver decrypts the signature with the sender’s **public key**.
-  - Then hashes the original data themselves and compares it to the decrypted hash.
-  - If they match, the message is authentic and unaltered.
-
-## 🔒 Why It Matters
-
-- **Integrity**: Confirms that data hasn't been modified.
-- **Authentication**: Proves the sender's identity using cryptographic keys.
-- **Non-repudiation**: The sender can’t deny having sent the message if the signature is valid.
-
-## 🛠 Real-World Application Scenario  
-An incident response team investigates a suspicious email with an attachment. The analyst checks the digital signature and finds the hash doesn't match — indicating the file was tampered with in transit. This helps the team block the payload and begin mitigation immediately.
+### 📘 Notes — Digital Signatures and Hashing  
+**CompTIA Security+ Objective: 2.8 — Summarize the basics of cryptographic concepts**
 
 ---
 
-## 🤖 What Could IRIS Do?
+### 🧠 Core Concepts
 
-- **Auto-check hash integrity** of suspicious files and flag mismatches.
-- **Validate signatures** of critical internal documents or email attachments.
-- **Log hash values** in alert reports to prove whether files were modified.
-- **Alert SOC teams** if a signature verification fails, offering suggestions for next steps.
+- **Hashing**  
+  - One-way cryptographic function that outputs a fixed-length value  
+  - Used to ensure **data integrity**  
+  - Common algorithms: SHA-256, MD5 (deprecated)
+  - If even one bit changes, the hash output changes drastically
+
+- **Digital Signatures**  
+  - Combines **hashing** with **asymmetric encryption** to prove:  
+    - **Integrity**: Has the message been altered?  
+    - **Authentication**: Who sent the message?  
+    - **Non-repudiation**: Can the sender deny sending it?
+  - Workflow:
+    1. Sender hashes the message
+    2. Sender encrypts the hash with their **private key** (signature)
+    3. Receiver decrypts with **sender's public key** and compares hashes
 
 ---
 
-*Logged by Operator 00rders – with IRIS assisting in cryptographic integrity and authenticity validation.*
+### 🔐 Why It Matters in Security
+
+- Hashing allows for quick and secure verification of files, passwords, and logs
+- Digital signatures are used in:
+  - Secure email (S/MIME, PGP)
+  - Software signing
+  - TLS/SSL certificates
+- Both are critical for ensuring **trust** in data exchange and system integrity
+
+---
+
+### 💼 Real-World SOC Example
+
+> A software package downloaded by a user comes with a `.sig` file and a hash value on the developer’s website.  
+> - The SOC analyst uses the developer’s **public key** to verify the signature and ensure the file hasn’t been tampered with  
+> - If the hash doesn’t match, the file is flagged as potentially c
