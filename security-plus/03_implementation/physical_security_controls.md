@@ -1,7 +1,7 @@
-01 — Physical Security Controls (Security+ Focused)  
+Objective 3.5 — Physical Security Controls  
 🧩 Scenario
 
-I listened to Professor Messer’s Security+ video on physical security controls during a stealth-mode study session while working retail. I intentionally focused on identifying **only the devices and concepts most likely to show up on the CompTIA Security+ exam**, filtering out overly intuitive or low-value facts like "lighting deters intruders."
+While studying Security+ implementation topics, I focused on the physical security devices most likely to appear on the exam. My goal was to understand which controls are high-priority for test preparation and to memorize their core function without over-focusing on overly obvious examples (e.g., lighting deters attackers).
 
 🔧 What I Did
 
@@ -10,53 +10,47 @@ I listened to Professor Messer’s Security+ video on physical security controls
 
 🧠 What I Learned
 
-These are the physical security devices and methods most likely to be tested:
+These are the physical security controls I prioritized based on exam relevance:
 
-#### 🚪 **Barricades & Bollards**
-- *Prevent vehicle-based threats* and control access to buildings or areas.
+- **Barricades & Bollards**  
+  Prevent vehicles from breaching restricted zones.
 
-#### 🚧 **Access Control Vestibules** (aka “Mantraps”)
-- One door must close before the next opens.
-- *Prevents tailgating and unauthorized entry.*
+- **Access Control Vestibules (Mantraps)**  
+  One door closes before the next opens — prevents tailgating and unauthorized entry.
 
-#### 🎛️ **Alarms & Sensors**
-- Motion detectors, door sensors, and glass break sensors detect unauthorized access attempts.
+- **Alarms & Sensors**  
+  Detect motion, door opening, or glass breaking — trigger alerts or lockdowns.
 
-#### 🔐 **Badges, Smart Cards, Biometrics**
-- Used for identity verification and access enforcement at entry points.
-- Multi-factor when combined with PINs or passwords.
+- **Badges, Smart Cards, Biometrics**  
+  Used to verify identity and grant access to secure areas.
 
-#### 📷 **Video Surveillance (CCTV)**
-- Records activity; often integrated with motion detection or access logs.
-- Useful for deterrence *and* post-incident review.
+- **Video Surveillance (CCTV)**  
+  Provides visual record of activity — used for real-time monitoring and post-incident review.
 
-#### 🔄 **Key Management**
-- Controlled distribution of physical keys and fobs.
-- Includes key control logs and limited duplication policies.
+- **Key Management**  
+  Tracks physical key issuance and limits duplication.
 
-#### 🛡️ **Guards**
-- Human presence as an active deterrent and first-line detection mechanism.
+- **Security Guards**  
+  Act as active deterrents, monitors, and first responders.
 
-#### 🔒 **Cable Locks & Locking Cabinets**
-- Prevent unauthorized physical access to mobile devices or servers.
+- **Cable Locks & Locking Cabinets**  
+  Protect mobile devices, servers, or drives from physical theft.
 
-#### 🚪 **Door Access Controls**
-- Electronic locks (e.g., magnetic or smart locks) that log entry data and allow scheduled access.
+- **Electronic Door Access Controls**  
+  Include keypads, card readers, or biometric scanners — often tied to access logs.
 
-#### ☢️ **Faraday Cages / Shielding**
-- Block wireless or electromagnetic signal leakage, especially for secured environments.
+- **Faraday Cages / Shielding**  
+  Block electromagnetic signals to protect against wireless eavesdropping or data leakage.
 
 🔒 Why It Matters
 
-Even the most secure network is vulnerable to **physical access attacks** (e.g., plugging in rogue devices, stealing drives). Understanding these physical layers is essential for implementing full defense-in-depth.
+Digital security is meaningless if physical assets can be stolen or tampered with. Understanding these controls is critical in roles where incident response or compliance require layered protection — both logical and physical.
 
 💼 Real-World Scenario
 
-A SOC analyst notices unexpected data exfiltration. Upon review, footage shows a third-party contractor entering through a propped door. This was a failure of both the door access control system and surveillance review protocols. Physical security gaps led to a digital breach.
+An employee gains unauthorized access to a server closet using a cloned badge. The breach was made possible by weak key management and no real-time surveillance. Incident response required reviewing physical logs alongside SIEM alerts — tying physical and digital together.
 
 🤖 What Could IRIS Do?
 
-Cross-reference building access logs with login timestamps to detect suspicious patterns.
-Parse badge entry logs and highlight after-hours activity.
-Maintain a physical access inventory for incident response.
-Logged by Operator 00rders, supported by IRIS — your SOC copilot.
+Cross-reference badge scans and system logins to identify mismatched access.
+Alert when physica
