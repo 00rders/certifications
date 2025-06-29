@@ -1,32 +1,35 @@
-# 03 — Non-Repudiation
-
-## 🧩 Context  
-Understanding non-repudiation is crucial for verifying the origin and integrity of data in digital communications. It ensures that actions (like sending a message or performing a transaction) cannot later be denied.
-
-## 🔧 What I Learned
-
-- **Non-repudiation** means someone cannot deny having performed an action, such as sending a message or initiating a transaction.
-- It's the **digital equivalent of a signed contract** — undeniable proof of origin and delivery.
-- This is typically enforced using **digital signatures**, where asymmetric encryption and hashing are combined.
-- Plays a key role in legal, financial, and security systems where proof of origin is essential.
-
-## 🔒 Why It Matters
-
-- **Security Assurance**: Confirms sender identity and message integrity in critical transactions.
-- **Forensic Use**: Enables traceable, auditable records for investigators or security teams.
-- **Trust Layer**: Builds confidence in communications, especially across insecure or hostile environments.
-
-## 🛠 Real-World Application Scenario  
-A SOC analyst receives a tamper-alert for a sensitive internal document. The analyst uses metadata and the digital signature embedded in the file to confirm the document was in fact created by a trusted executive and hasn't been altered. This validation prevents a costly data breach investigation.
+### 📘 Notes — Non-Repudiation  
+**CompTIA Security+ Objective: 2.8 — Summarize the basics of cryptographic concepts**
 
 ---
 
-## 🤖 What Could IRIS Do?
+### 🧠 Core Concepts
 
-- **Log signature validations** during file ingestion or alerts, noting verified origin and hash match status.
-- **Generate auto-audit logs** when a file’s digital signature fails validation.
-- **Support compliance checks** by scanning stored files for non-signed or altered critical documents.
+- **Non-repudiation** ensures that a party **cannot deny** the authenticity of a message, action, or transaction.
+- Built on a combination of:
+  - **Authentication** — verifying identity
+  - **Integrity** — ensuring data hasn’t changed
+  - **Digital Signatures** — proving the sender and contents are valid
+
+- Typically achieved using **asymmetric cryptography**:
+  - Sender signs data with their **private key**
+  - Anyone can verify it using the **public key**
 
 ---
 
-*Logged by Operator 00rders – in collaboration with IRIS, your SOC co-pilot.*
+### 🔐 Why It Matters in Security
+
+- Critical for trust in communication, especially in:
+  - Legal documents
+  - Financial transactions
+  - Secure email and messaging
+- Prevents users from falsely claiming “I didn’t send that” or “That wasn’t me”
+
+---
+
+### 💼 Real-World SOC Example
+
+> A user denies submitting a wire transfer request.  
+> - The SOC analyst checks the digital signature on the transaction.  
+> - It was signed with the user’s **private key** and verified with their **public key**, proving authorship.  
+> - The organization confirms the action was legitimate and holds the user accountable.
