@@ -25,6 +25,13 @@ While these certifications are just a stepping stone, this repo helps:
 - Serve as a quick personal reference during review or job interviews.
 - Track and reflect on my learning progression.
 
+> 🚨 This material is independently created and **not affiliated with or endorsed by CompTIA**. All notes are for **personal study and certification prep only** and do not represent official CompTIA content.
 ---
 
-> 🚨 This material is independently created and **not affiliated with or endorsed by CompTIA**. All notes are for **personal study and certification prep only** and do not represent official CompTIA content.
+### ⚠️ AI Usage Disclaimer
+
+All notes in this repository are manually revised and logged by me.  
+I use AI tools like ChatGPT to assist with **clarity, formatting, and knowledge reinforcement**, but every concept here reflects my own understanding.
+
+This repo is a record of my **hands-on learning**, not AI-generated shortcuts.  
+Transparency and integrity are core to how I study — and how I plan to work in the security industry.
