@@ -5,87 +5,77 @@
 
 ### 🧠 Core Concepts
 
-The **CIA Triad** is the foundational model of information security.  
-It outlines the three core goals that every security control, system, and policy must support:
+The **CIA Triad** is the foundation of cybersecurity. It defines the three core objectives that all security mechanisms must enforce:
 
 ---
 
-#### 🔒 Confidentiality — *Keep it private*
-- Prevents unauthorized access to sensitive data
-- Maintains privacy and discretion
-- Enforced using:
-  - **Encryption** (e.g., AES, TLS)
-  - **Access controls** (ACLs, RBAC)
-  - **Data classification**
-  - **Least privilege policies**
-- Common threats:
+#### 🔒 Confidentiality — *Prevent Unauthorized Access*
+- **Goal:** Ensure only authorized users can view sensitive information.
+- **Methods:**
+  - Encryption (AES, TLS)
+  - Access controls (RBAC, ACLs)
+  - Need-to-know policies
+  - Data classification
+- **Threats:**
   - Data breaches
-  - Eavesdropping/sniffing
-  - Insider theft
+  - Insider threats
+  - Eavesdropping
 
 ---
 
-#### 🧾 Integrity — *Keep it accurate*
-- Ensures data remains **unaltered, authentic, and consistent**
-- Verifies that information has not been modified maliciously or accidentally
-- Enforced using:
-  - **Hashing** (e.g., SHA-256)
-  - **Checksums**
-  - **Digital signatures**
-  - **Version control**
-- Common threats:
-  - Tampering
-  - Man-in-the-middle attacks
-  - Faulty updates or corrupted backups
+#### 🧾 Integrity — *Preserve Data Accuracy*
+- **Goal:** Ensure data is unmodified, authentic, and reliable.
+- **Methods:**
+  - Hashing (SHA-256)
+  - Checksums and file integrity monitoring
+  - Digital signatures
+  - Version control systems
+- **Threats:**
+  - Tampering (e.g., MITM attacks)
+  - Corrupt files or software
+  - Unauthorized database changes
 
 ---
 
-#### 🟢 Availability — *Keep it accessible*
-- Ensures data, systems, and services are **available when needed**
-- Supports operational continuity
-- Enforced using:
-  - **Redundancy** (RAID, clustering)
-  - **Backups and restores**
-  - **DDoS mitigation**
-  - **High-availability architecture (HA)**
-- Common threats:
+#### 🟢 Availability — *Maintain Timely Access*
+- **Goal:** Ensure systems and data are accessible when needed.
+- **Methods:**
+  - Redundancy (RAID, clustering)
+  - Backup and disaster recovery
+  - DDoS protection and uptime SLAs
+  - High availability architecture
+- **Threats:**
+  - DDoS attacks
+  - Power outages
   - Hardware failure
-  - Denial-of-service attacks
-  - Natural disasters
 
 ---
 
-### 🔄 Triad Interdependence
+### ⚖️ Interdependence of the Triad
 
-- A compromise to **one element often affects the others**
-  - Example: A DDoS (availability) attack could obscure or delay integrity checks
-  - Example: An over-restrictive control meant to ensure confidentiality could harm availability
+- **Compromising one element often affects the others:**
+  - A ransomware attack affects **availability**, may compromise **confidentiality**, and undermines **integrity**
+  - Over-encryption to protect **confidentiality** could reduce **availability** for valid users
 
 ---
 
 ### 🔐 Why It Matters in Security
 
-- Every security decision — from firewall rules to password policies — should support at least one CIA principle
-- The triad forms the **core lens** through which analysts:
-  - Assess threats
-  - Justify controls
-  - Prioritize incident response
-- Also used to:
-  - Evaluate risk
-  - Write policies
-  - Comply with frameworks (e.g., NIST, ISO 27001, PCI-DSS)
+- Every control or policy should support at least one CIA pillar
+- Analysts use the triad to:
+  - Evaluate risks and prioritize incident response
+  - Design security architecture
+  - Align with compliance standards (NIST, ISO, HIPAA)
 
 ---
 
 ### 💼 Real-World SOC Example
 
-> A company’s main e-commerce site is hit by a DDoS attack.  
-> - **Availability** is disrupted, blocking customer access  
-> - The SOC team routes traffic through a backup CDN and begins blocking malicious IPs  
-> - Post-recovery, they verify:
->   - Log **integrity** (no tampering occurred during downtime)  
->   - **Confidentiality** was maintained (no exposed PII or credentials)  
-> - This layered response shows how the CIA triad remains central during incident handling
+> A healthcare provider is hit by a DDoS attack on its online portal.  
+> - **Availability** is compromised — patients can’t access services.  
+> - The SOC team activates geo-blocking and failover DNS routing.  
+> - After recovery, logs are verified for **integrity**, and no **confidential** patient data was exposed.  
+> - The event is documented to improve triad-aligned resilience for future incidents.
 
 ---
 
