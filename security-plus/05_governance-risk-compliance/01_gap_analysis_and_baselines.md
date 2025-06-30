@@ -6,58 +6,76 @@
 ### 🧠 Core Concepts
 
 #### 🔎 Gap Analysis
-- A structured comparison between an organization's **current security posture** and a **desired or required state**.
-- Used to identify:
-  - **Missing controls**
-  - **Insufficient protections**
-  - **Outdated configurations**
-- Often conducted as part of:
-  - Internal security audits
-  - Third-party assessments
-  - Compliance readiness checks
+- A formal method of identifying **discrepancies** between an organization’s **current security posture** and its **desired or required security state**
+- Common use cases:
+  - Internal audits
+  - Compliance checks (HIPAA, PCI-DSS, GDPR)
+  - Preparation for third-party assessments or certifications
+
+> Example: Comparing current firewall rules to CIS benchmarks to reveal missing or misconfigured settings
+
+---
 
 #### 🧱 Security Baseline
-- A **minimum required configuration or control set** used to maintain a secure system state.
-- Ensures consistency across:
-  - Systems
-  - Devices
-  - Accounts
-  - Networks
-- Typically derived from:
-  - **Industry standards** (e.g., NIST 800-53, CIS Benchmarks)
-  - **Internal policy requirements**
-  - **Legal or regulatory obligations** (e.g., HIPAA, PCI-DSS)
+- A defined **minimum level of security configuration** for systems, networks, and applications
+- Includes:
+  - Patch levels
+  - Port/service configurations
+  - Access controls
+  - Encryption/enforcement policies
+- Sources:
+  - **Industry standards** (CIS, NIST 800-53, ISO/IEC 27001)
+  - **Organizational policy**
+  - **Legal/regulatory mandates**
 
-#### 🔁 Baselines + Gap Analysis Workflow
-1. **Establish the baseline** (desired secure state)
-2. **Perform gap analysis** to assess current posture
-3. **Document deviations** and quantify risk
-4. **Prioritize remediation** based on business impact and compliance urgency
-5. **Update baseline** as systems or standards evolve
+---
+
+### 🔁 Baseline & Gap Analysis Lifecycle
+
+1. **Define the baseline** — using internal policy + frameworks  
+2. **Assess current posture** — via gap analysis  
+3. **Document gaps** — include severity, business risk, and impacted assets  
+4. **Prioritize remediation** — based on risk appetite and compliance deadlines  
+5. **Update baseline** — regularly to match evolving systems, threats, and standards
 
 ---
 
 ### 🔐 Why It Matters in Security
 
-- Helps organizations ensure systems align with **known-good security practices**
-- Identifies misconfigurations, missing patches, legacy services, and policy violations
-- Strengthens the security lifecycle by:
-  - Providing a measurement point for risk
-  - Supporting **continuous improvement**
-  - Enabling **justifiable investments** in remediation
-- Forms the foundation of **risk assessments** and ongoing **governance programs**
+- Enables **proactive risk identification** before exploitation occurs
+- Promotes **standardized security configurations** across all systems
+- Supports:
+  - **Change control and audit readiness**
+  - **Incident prevention** (e.g., reducing attack surface)
+  - **Budget justification** for tools, staffing, and controls
+
+> ⚠️ A weak baseline or ignored gap analysis can lead to:
+> - Misconfigurations
+> - Compliance failures
+> - Easier exploitation by attackers
 
 ---
 
 ### 💼 Real-World SOC Example
 
-> Your organization mandates the CIS Level 1 benchmark for Linux servers.  
-> During a gap analysis, it’s discovered that:
-> - Several servers have SSH root login enabled  
-> - Older TLS protocols are still active  
-> - Patch management is inconsistent  
-> The SOC team tags these gaps as critical, escalates the fix via change management, and uses the findings to revise onboarding procedures for new assets.
+> A quarterly internal gap analysis shows:
+> - Linux servers allow SSH root login  
+> - TLS 1.0 still enabled  
+> - Systems missing recent kernel patches  
+>  
+> The SOC tags these as high-priority misconfigurations.  
+> The incident response team escalates remediation through the change management process.  
+> The findings are later used to **update onboarding templates and security checklists**, preventing recurrence across new infrastructure.
 
 ---
 
-*Logged by 00rders*
+### ✅ CompTIA Objective Mapping
+
+- **5.4** — Risk management concepts:
+  - Gap analysis
+  - Security baselines
+  - Threat modeling, risk appetite, and continuous improvement
+
+---
+
+**Logged by 00rders**
