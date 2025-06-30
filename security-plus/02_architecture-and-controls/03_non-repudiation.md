@@ -5,60 +5,67 @@
 
 ### 🧠 Core Concepts
 
-**Non-repudiation** ensures that a user or system **cannot deny** performing an action, sending a message, or initiating a transaction.
+**Non-repudiation** ensures that a party **cannot deny** the authenticity of their actions, messages, or transactions.  
+It provides verifiable proof that:
 
-It provides proof that:
-- **The message came from a known sender**
-- **The message was not altered**
-- **The sender cannot later claim they didn’t send it**
+- A message or action **originated from a specific sender**
+- The content was **not tampered with** in transit
+- The sender **cannot deny** having sent the message
 
-Non-repudiation is built on the combined use of:
-- **Authentication** — confirms the sender’s identity
-- **Integrity** — verifies the data hasn't been modified
-- **Digital signatures** — provide cryptographic evidence of authorship
+Non-repudiation is achieved by combining:
 
----
-
-### 🔐 How It Works (Using Asymmetric Cryptography)
-
-- The sender hashes the message, then encrypts the hash with their **private key**  
-- This encrypted hash becomes the **digital signature**
-- The receiver:
-  - Decrypts the signature using the sender’s **public key**
-  - Re-hashes the received message
-  - Compares the two hashes to confirm the message:
-    - Was authored by the sender
-    - Was not altered in transit
-
-This method creates **cryptographic accountability**.
+- **Authentication** — Verifies identity  
+- **Integrity** — Ensures data is unchanged  
+- **Digital signatures** — Bind identity and content cryptographically
 
 ---
 
-### 🧾 Use Cases Where Non-Repudiation Is Critical
+### 🔐 How Digital Signatures Provide Non-Repudiation
 
-- **Legal contracts and electronic signatures**
-- **Financial transactions and wire transfers**
-- **Audit trails and security logs**
-- **Email and secure messaging (PGP, S/MIME)**
-- **Supply chain integrity (software signing, blockchain)**
+1. **Message is hashed** (e.g., with SHA-256)  
+2. The hash is **encrypted with the sender’s private key** — creating the digital signature  
+3. The receiver:
+   - **Decrypts** the signature using the sender’s public key  
+   - Hashes the received message independently  
+   - **Compares** the two hashes:
+     - If they match: the message is authentic and unaltered  
+     - If they differ: tampering is detected
+
+🔁 This process guarantees that only the **private key owner** could have created the signature — and that the message has not been changed.
+
+---
+
+### 🧾 Where Non-Repudiation is Used
+
+- **Digital contracts and e-signatures** (e.g., DocuSign, Adobe Sign)
+- **Wire transfers and payment approvals**
+- **Software distribution (code signing certs)**
+- **Secure messaging** (PGP, S/MIME)
+- **Audit logs in regulated environments (SOX, HIPAA, PCI-DSS)**
 
 ---
 
 ### 🔐 Why It Matters in Security
 
-- Prevents users or attackers from denying actions that left a trace
-- Enables **forensic investigation**, **legal enforcement**, and **policy accountability**
-- Essential in environments where actions must be **verifiable and attributable** (e.g., financial services, government, regulated industries)
+- Provides legal and forensic evidence in disputes
+- Prevents false denials in sensitive operations
+- Enables:
+  - **Attribution** of actions to users
+  - **Enforcement** of corporate policy
+  - **Trust** in automated and remote transactions
 
 ---
 
 ### 💼 Real-World SOC Example
 
-> A finance employee claims they never authorized a wire transfer to an external account.  
-> The SOC analyst reviews the logs and finds a digitally signed approval sent via a secure system.  
-> Using the employee’s **public key**, they verify the digital signature was created with the employee’s **private key**.  
-> The hash matches, confirming the message’s integrity and authorship.  
-> The organization proves the action occurred and holds the employee accountable — enabling both legal protection and internal review.
+> A user claims they never submitted a privileged access request.  
+> The SOC analyst pulls system logs showing the request was signed with the user’s private key.  
+> The analyst:
+> - Verifies the digital signature using the user’s public key  
+> - Matches the message hash to the signed hash  
+> - Confirms authorship and integrity  
+>  
+> The evidence proves the user initiated the request — satisfying compliance and preventing false repudiation.
 
 ---
 
