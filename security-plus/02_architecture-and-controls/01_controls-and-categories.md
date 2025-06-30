@@ -5,52 +5,72 @@
 
 ### 🧠 Core Concepts
 
-Security controls are mechanisms used to enforce the **CIA triad** (Confidentiality, Integrity, Availability).  
-Each control has two key attributes:
+Security controls are the mechanisms used to protect systems, data, and people by enforcing the **CIA Triad**:
+- **Confidentiality** (protecting data from unauthorized access)
+- **Integrity** (ensuring data accuracy and trustworthiness)
+- **Availability** (ensuring systems and data are accessible when needed)
+
+Security controls are classified in **two ways**:
 
 ---
 
-#### 🔧 Control Types
+#### 🔧 Control Types (How a control is implemented)
 
 - **Technical (Logical)**  
-  - Enforced by technology and systems  
-  - Examples: Firewalls, intrusion detection systems, encryption
+  - Implemented using technology or systems  
+  - Examples: Firewalls, antivirus software, access control lists, encryption, IDS/IPS
 
 - **Administrative (Managerial)**  
-  - Enforced through policies, procedures, and training  
-  - Examples: Security policies, background checks, awareness training
+  - Implemented via policies, management decisions, and organizational processes  
+  - Examples: Security policies, hiring practices, background checks, user training
 
 - **Operational (Procedural)**  
-  - Enforced through daily routines and processes  
-  - Examples: Incident response plans, physical security patrols
+  - Implemented via day-to-day operations and tasks  
+  - Examples: Incident response plans, physical access logs, awareness campaigns, maintenance procedures
 
 ---
 
-#### 🎯 Control Categories
+#### 🎯 Control Categories (What a control is intended to do)
 
-- **Preventive** — Stops an attack from occurring  
-  - Examples: Access control lists, door locks, security awareness training
+- **Preventive**  
+  - Designed to stop an attack or threat from occurring  
+  - Examples: Door locks, firewalls, antivirus software, MFA, security awareness training
 
-- **Detective** — Identifies and logs an attack after it happens  
-  - Examples: SIEM alerts, motion sensors, CCTV
+- **Detective**  
+  - Designed to identify and log security events after they occur  
+  - Examples: Log monitoring, SIEM alerts, motion sensors, CCTV, tripwires
 
-- **Corrective** — Responds to and mitigates damage after an incident  
-  - Examples: Patch deployment, backup restores, firewall rule updates
+- **Corrective**  
+  - Designed to mitigate harm or restore systems after an incident  
+  - Examples: Patching, restoring from backup, changing firewall rules, reimaging systems
+
+- **Deterrent**  
+  - Discourages actions through fear of consequences  
+  - Examples: Warning signs, security cameras, security guards
+
+- **Compensating**  
+  - Alternative controls that provide similar protection when primary controls aren’t feasible  
+  - Example: Using CCTV and logs when full access control can’t be implemented
 
 ---
 
 ### 🔐 Why It Matters in Security
 
-- Controls are the foundation of every security architecture
-- Analysts must understand types and categories to:
-  - Interpret alerts properly
-  - Spot weaknesses or gaps in defenses
-  - Communicate control failures to technical and non-technical teams
+- Proper classification of controls helps security teams:
+  - Design layered defense-in-depth strategies
+  - Prioritize responses to incidents
+  - Evaluate gaps in protection during audits or assessments
+- Controls are a core part of every **risk mitigation plan** and compliance framework
 
 ---
 
 ### 💼 Real-World SOC Example
 
-> A brute-force login attempt bypasses weak credentials (failed **Preventive** control).  
-> The login is logged and triggers an alert (**Detective** control).  
-> The SOC team blocks the IP, resets credentials, and enables MFA (**Corrective** and **Preventive** controls combined).
+> A brute-force login attempt succeeds due to weak credentials — a failure of a **Preventive** control (password policy).  
+> The attempt is logged by the SIEM and triggers an alert — a **Detective** control.  
+> The SOC responds by blocking the IP, resetting credentials, and enabling MFA — combining **Corrective** and **Preventive** measures.  
+> A policy update follows to enforce stronger passwords — an **Administrative** and **Preventive** control.
+
+---
+
+*Logged by 00rders*
