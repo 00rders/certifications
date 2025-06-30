@@ -5,64 +5,102 @@
 
 ### 🧠 Core Concepts
 
-#### Symmetric Encryption
-- Uses **one key** to encrypt and decrypt data.
-- Fast and efficient — ideal for large amounts of data.
-- Major downside: key distribution is difficult and insecure at scale.
-- Example: AES (Advanced Encryption Standard)
+#### 🔐 Symmetric Encryption — *"One key to rule them all"*
+- Uses the **same key** to encrypt and decrypt data.
+- ✅ **Fast**, lightweight, and ideal for bulk data (e.g., full disk encryption)
+- ❌ Downside: **Key distribution risk** — both parties must securely share the key
+- 📦 Common algorithms: **AES**, **3DES**, **Blowfish**
 
-#### Asymmetric Encryption
-- Uses **two keys**:
-  - **Public key**: Shared openly, used to **encrypt**
-  - **Private key**: Kept secret, used to **decrypt**
-- Enables secure communication without sharing private keys.
-- Supports features like:
-  - **Authentication**
-  - **Non-repudiation**
+#### 🔐 Asymmetric Encryption — *"Two keys for secure exchange"*
+- Uses a **key pair**:
+  - **Public key** → used to **encrypt** or verify
+  - **Private key** → used to **decrypt** or sign
+- Powers:
+  - **Secure key exchange**
   - **Digital signatures**
+  - **Email/message encryption**
+  - **Authentication (e.g., SSH, HTTPS)**
 
-#### Key Concepts
-- **Key Pair Generation**:
-  - Public/private keys are generated together and mathematically linked.
-  - Usually created once unless compromised or rotated.
+#### 🔁 Hybrid Encryption — *Best of both worlds*
+- **Asymmetric encryption** used to exchange a session key
+- That key is then used with **symmetric encryption** for speed
+- Common in TLS, PGP, VPN tunnels
 
-- **Key Escrow**:
-  - A third-party system that stores private keys securely.
-  - Allows recovery if keys are lost or during legal/investigative access.
-  - Can be **internal** or **outsourced** (e.g., to a certificate authority or enterprise vault)
+---
 
-#### Public Key Infrastructure (PKI)
-- The entire system managing **asymmetric encryption** and **digital certificates**.
-- Provides:
-  - **Certificate Authorities (CAs)**: Issue and validate certificates
-  - **Registration Authorities (RAs)**: Validate identities before issuing certs
-  - **Certificate Revocation Lists (CRLs)** / **OCSP**: Check if certs are revoked
-- Enables encrypted web communication (HTTPS), secure email, and user/device authentication.
+### 🔑 Key Management Concepts
+
+#### 🧪 Key Pair Generation
+- Keys are generated **mathematically linked** (e.g., RSA, ECC)
+- Public key is freely shared; private key must be **stored securely**
+
+#### 🧳 Key Escrow
+- A **trusted third-party** (internal or external) stores encryption keys
+- Enables:
+  - **Recovery** in case of loss
+  - **Compliance** and lawful access (with proper authorization)
+- Often used in enterprise environments and government sectors
+
+---
+
+### 🏛️ Public Key Infrastructure (PKI)
+
+**PKI** is a trust framework used to manage **digital certificates** and **asymmetric encryption**.
+
+#### PKI Core Components:
+
+| Component | Role |
+|-----------|------|
+| **Certificate Authority (CA)** | Issues and signs certificates |
+| **Registration Authority (RA)** | Verifies user identities on behalf of the CA |
+| **Certificates (X.509)** | Bind public keys to identities |
+| **CRL (Certificate Revocation List)** | Offline list of revoked certificates |
+| **OCSP (Online Certificate Status Protocol)** | Real-time certificate status check |
+| **Key Recovery Agent (KRA)** | Recovers lost keys in key escrow systems |
+| **Trust Model** | Defines how trust is built (hierarchical, web-of-trust, etc.) |
+
+---
+
+### 🧠 Exam Tips
+
+- **Symmetric = fast, 1 key**, but has key distribution risk  
+- **Asymmetric = slow, 2 keys**, used for signatures and secure key exchange  
+- **Digital certificates** prove identity, not encrypt data  
+- **PKI = infrastructure**, not an algorithm  
+- Know **OCSP = real-time** and **CRL = static list**
 
 ---
 
 ### 🔐 Why It Matters in Security
 
-- Asymmetric encryption enables **trust** in public communications.
-- PKI ensures the **authenticity** of digital identities.
-- Encryption underpins nearly every secure service — from VPNs to file transfer to SSO.
+- Enables **confidentiality** across untrusted networks (e.g., internet)
+- Verifies **authenticity and identity** using digital signatures
+- Supports:
+  - **HTTPS / TLS**
+  - **Email signing/encryption (PGP, S/MIME)**
+  - **VPNs, SSH, software updates**
 
 ---
 
 ### 💼 Real-World SOC Example
 
-> An employee sends a sensitive document via email using end-to-end encryption.  
-> - The recipient encrypts the message with the sender's **public key**.  
-> - The sender decrypts it using their **private key**.  
-> - Later, auditors review logs showing the **digital signature**, confirming both sender identity and message integrity.  
-> - The SOC verifies certificate validity using OCSP before trusting the origin.
+> A user connects to a secure internal site over HTTPS.  
+> - The server presents a digital certificate from the internal **CA**  
+> - The browser performs an **OCSP** check to verify it’s valid and not revoked  
+> - A **TLS session** is negotiated using hybrid encryption  
+> - Data is exchanged using **symmetric AES**, but session keys were exchanged using **RSA (asymmetric)**  
+> - SOC analysts verify the certificate chain and signature trust path when investigating alerts
 
 ---
 
 ### ✅ CompTIA Objective Mapping
 
-- **2.8** — Cryptographic concepts: symmetric vs asymmetric, key management, non-repudiation, hashing, PKI
-- Includes support concepts used in other objectives (e.g., secure communication protocols, authentication)
+- **2.8 — Cryptographic Concepts**
+  - Symmetric vs. Asymmetric
+  - Key management and escrow
+  - PKI components
+  - Certificate revocation (CRL vs. OCSP)
+  - Digital signature use cases
 
 ---
 
