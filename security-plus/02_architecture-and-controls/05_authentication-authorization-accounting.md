@@ -5,67 +5,99 @@
 
 ### 🧠 Core Concepts
 
-The **AAA model** is the foundation of secure access control systems.  
-It defines the lifecycle of user interaction with resources:
+The **AAA security framework** governs secure access to systems and resources by defining **who** can access, **what** they can do, and **how** those actions are tracked.
 
 ---
 
 #### 🔐 1. Authentication — *Who are you?*
-- Verifies the identity of a user or device
-- Methods include:
-  - **Username + password**
-  - **Biometrics** (fingerprint, retina)
-  - **Tokens** (hardware or software)
-  - **Smart cards**
-  - **Multi-factor authentication (MFA)**
+- The process of verifying **identity**
+- Proves that a user/device is legitimate before access is granted
 
-##### 📚 MFA Factor Types:
-- **Something you know** — password, PIN
-- **Something you have** — smart card, phone, hardware token
-- **Something you are** — fingerprint, facial recognition
-- **Somewhere you are** — geolocation, IP range
-- **Something you do** — typing patterns, behavior biometrics
+✅ **Common Methods**:
+- Username + password (least secure)
+- Smart cards (e.g., CAC/PIV)
+- One-time passwords (OTP)
+- Software/hardware tokens (e.g., RSA SecurID)
+- Biometric scanners (e.g., facial, fingerprint)
+- Certificates (e.g., X.509)
+- Federated identity systems (e.g., SAML, OAuth, OpenID Connect)
 
----
+✅ **Multi-Factor Authentication (MFA)**:
+> Combines **two or more** types of factors:
 
-#### 🔑 2. Authorization — *What are you allowed to do?*
-- Occurs after successful authentication
-- Determines access rights based on:
-  - **Roles** (RBAC — Role-Based Access Control)
-  - **Attributes** (ABAC — Attribute-Based Access Control)
-  - **Discretionary or mandatory access models**
-- Examples:
-  - Accessing shared drives, cloud apps, or admin panels
+- **Something you know** — password, PIN  
+- **Something you have** — token, badge, phone  
+- **Something you are** — biometric: iris, fingerprint  
+- **Somewhere you are** — IP, geolocation  
+- **Something you do** — behavior: typing speed, gestures  
 
 ---
 
-#### 📈 3. Accounting (Auditing) — *What did you do?*
-- Tracks and records user activity for:
-  - **Auditing**
-  - **Compliance**
-  - **Threat detection**
-- Examples:
-  - Session logs, login/logout timestamps, command histories
-- Tools: Syslog, SIEMs (Security Information and Event Management)
+#### 🔑 2. Authorization — *What can you access?*
+- Happens **after** authentication
+- Determines the **level of access** a subject has
+
+🧰 **Access Control Models**:
+- **RBAC (Role-Based Access Control)** — access by job role  
+- **ABAC (Attribute-Based)** — access by attributes (e.g., time of day, department)  
+- **MAC (Mandatory)** — enforced labels/classification levels (used in military/government)  
+- **DAC (Discretionary)** — owner decides who has access  
+
+Examples:
+- User can access shared finance drive but not modify files  
+- Admins can restart servers; interns cannot  
+
+---
+
+#### 📈 3. Accounting — *What did you do?*
+- The **record-keeping phase**  
+- Logs actions and tracks system usage for **auditing, security, and compliance**
+
+📊 **Examples**:
+- Login timestamps
+- File access records
+- VPN session logs
+- Command history
+
+🛠️ **Tools Used**:
+- **SIEM platforms** (e.g., Splunk, Elastic, QRadar)
+- **Syslog** for log forwarding
+- **AAA servers** (e.g., RADIUS, TACACS+) also provide accounting features
 
 ---
 
 ### 🔐 Why It Matters in Security
 
-- AAA provides **full visibility and control** over who is in your environment, what they can do, and what they’ve done
-- Critical for:
-  - **Forensic investigations**
-  - **Insider threat detection**
-  - **Regulatory compliance**
-  - **Least privilege enforcement**
+AAA is **foundational** to modern identity and access management (IAM) systems.  
+It provides:
+- Enforced **least privilege**
+- Auditable access trails
+- Detection of suspicious activity
+- Data for forensic investigations and compliance
+
+🔁 These controls help enforce:
+- **Zero trust**
+- **Defense in depth**
+- **Risk reduction and segmentation**
 
 ---
 
 ### 💼 Real-World SOC Example
 
-> A contractor logs into the VPN (Authentication), accesses HR records (Authorization), and the session is fully recorded in the SIEM (Accounting).  
-> A data exfiltration alert is triggered.  
-> The SOC team uses audit logs to trace the access path, confirm file movement, and determine whether proper authorization controls were bypassed.
+> A third-party vendor connects remotely via VPN (Authentication).  
+> Their access is limited to a software update folder (Authorization).  
+> Their session is recorded — login time, IP address, files accessed (Accounting).  
+> Later, a log review reveals the vendor accessed restricted finance data.  
+> This triggers an incident response, and logs are submitted for regulatory review.
+
+---
+
+### ✅ CompTIA Objective Mapping
+
+- **4.1** — Understand:
+  - Authentication types and factors
+  - Authorization models (RBAC, ABAC, MAC, DAC)
+  - Accounting systems and log correlation
 
 ---
 
