@@ -28,11 +28,12 @@ SELECT * FROM users WHERE username = 'admin' AND password = '123';
 Injected with:
 
 ' OR '1'='1
-'''
+
 Becomes:
 
+'
 SELECT * FROM users WHERE username = '' OR '1'='1';
-
+'
 > ✅ Always true — allows bypass of login without valid credentials.
 
 ---
