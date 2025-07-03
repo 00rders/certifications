@@ -22,13 +22,13 @@ It allows attackers to:
 - If the input is **not sanitized or validated**, attackers can inject SQL commands that modify the query logic.
 
 #### 🧪 Example:
-
+'''sql
 SELECT * FROM users WHERE username = 'admin' AND password = '123';
 
 Injected with:
 
 ' OR '1'='1
-
+'''
 Becomes:
 
 SELECT * FROM users WHERE username = '' OR '1'='1';
