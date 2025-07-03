@@ -31,9 +31,8 @@ Injected with:
 
 Becomes:
 
-'
 SELECT * FROM users WHERE username = '' OR '1'='1';
-'
+
 > ✅ Always true — allows bypass of login without valid credentials.
 
 ---
