@@ -36,10 +36,11 @@ Each folder maps directly to the five official Security+ domains, with structure
 ## 💡 Why This Exists
 
 > This isn’t just certification prep.  
-> It’s structured onboarding for a future **SOC analyst** — and training data for the IRIS copilot project.
+> It’s structured onboarding for a future **SOC analyst**.
 
 All notes are written for real-world application, not rote memorization.
 
 ---
 
 *Maintained by Operator 00rders · Security+ in progress*
+
