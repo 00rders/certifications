@@ -1,4 +1,4 @@
-# 🏆 Certifications Wall
+# 🏆 Certifications 
 
 A curated record of certifications I’ve earned and those I’m actively pursuing.  
 Each folder represents a certification — containing prep notes and reflections that document the journey toward achievement.
@@ -30,3 +30,4 @@ Each folder represents a certification — containing prep notes and reflections
 ⚠️ **Disclaimer**  
 This repository is independently created for study and reflection.  
 Not affiliated with or endorsed by CompTIA, Splunk, or any other organization.  
+
