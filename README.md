@@ -19,15 +19,8 @@ Each folder represents a certification — containing prep notes and reflections
 
 ---
 
-## 🎯 Purpose
-
-- Showcase certifications in a clean, centralized format.  
-- Provide a transparent view of progress and study process.  
-- Serve as a personal knowledgebase and quick reference.  
-
----
-
 ⚠️ **Disclaimer**  
 This repository is independently created for study and reflection.  
 Not affiliated with or endorsed by CompTIA, Splunk, or any other organization.  
+
 
