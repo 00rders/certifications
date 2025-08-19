@@ -1,37 +1,32 @@
-# Certifications — Study Notes for Network+, Security+, and Beyond
+# 🏆 Certifications Wall
 
-This repository is dedicated to documenting my journey through various certifications.  
-All notes are structured for clarity, retention, and quick revision, following the same modular style used across my cybersecurity learning roadmap.
-
----
-
-## 📚 Structure
-
-Each certification has its own folder and `notes.md` file:
-
-- [`network-plus/notes.md`](network-plus/notes.md)  
-  Contains foundational networking concepts, commands, and exam prep insights.
-
-- [`security-plus/notes.md`](security-plus/notes.md)  
-  Covers core security principles, threat types, best practices, and scenario breakdowns.
+A curated record of certifications I’ve earned and those I’m actively pursuing.  
+Each folder represents a certification — containing prep notes and reflections that document the journey toward achievement.
 
 ---
 
-## ✅ Purpose
+## 📜 Completed
 
-While these certifications are just a stepping stone, this repo helps:
+- **CompTIA Security+ (SY0-701)**  
+  Validates baseline security skills, threat analysis, and incident response knowledge.
 
-- Reinforce technical fundamentals alongside my lab-based learning.
-- Serve as a quick personal reference during review or job interviews.
-- Track and reflect on my learning progression.
-
-> 🚨 This material is independently created and **not affiliated with or endorsed by CompTIA**. All notes are for **personal study and certification prep only** and do not represent official CompTIA content.
 ---
 
-### ⚠️ AI Usage Disclaimer
+## 📚 In Progress
 
-All notes in this repository are manually revised and logged by me.  
-I use AI tools like ChatGPT to assist with **clarity, formatting, and knowledge reinforcement**, but every concept here reflects my own understanding.
+- **Splunk Core Certified User**  
+  Focused on search fundamentals, fields, alerts, and dashboards — core SOC analyst skills.
 
-This repo is a record of my **hands-on learning**, not AI-generated shortcuts.  
-Transparency and integrity are core to how I study — and how I plan to work in the security industry.
+---
+
+## 🎯 Purpose
+
+- Showcase certifications in a clean, centralized format.  
+- Provide a transparent view of progress and study process.  
+- Serve as a personal knowledgebase and quick reference.  
+
+---
+
+⚠️ **Disclaimer**  
+This repository is independently created for study and reflection.  
+Not affiliated with or endorsed by CompTIA, Splunk, or any other organization.  
